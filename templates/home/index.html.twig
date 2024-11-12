@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Destinations{% endblock %}
+ 
+
+
+{% block body %}
+  <div class="container my-5">
+        <h1 class="text-center mb-4">Destinations</h1>
+        <div class="row">
+            {% for destination in destinations %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        {% if destination.image  %}
+                            <img src="{{ asset('uploads/images/' ~ destination.image) }}" class="card-img-top img-fixed" alt="{{ destination.name }}">
+                        {% else %}
+                            <img src="{{ asset('uploads/images/default.jpg') }}" class="card-img-top img-fixed" alt="Default image">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ path('app_destination_details', { id: destination.id }) }}">
+                                    {{ destination.name }}
+                                </a>
+                            </h5>
+                             <p class=""> {{ destination.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <p class="text-center">No destinations available.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

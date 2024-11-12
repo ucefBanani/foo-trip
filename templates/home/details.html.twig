@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ destination.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5">
+		<a href="{{ path('app_home') }}" class="btn btn-secondary mt-3">Back to Destinations</a>
+		<h1>{{ destination.name }}</h1>
+		<img src="{{ asset('uploads/images/' ~ destination.image) }}" class="img-fluid" alt="{{ destination.name }}">
+		<div class="card-body">
+			<p class="card-text">
+				<strong>Description:</strong>
+				{{ destination.description }}</p>
+			<p class="card-text">
+				<strong>Price:</strong>
+				{{ destination.price }}</p>
+			<p class="card-text">
+				<strong>Duration:</strong>
+				{{ destination.duration }}</p>
+
+		</div>
+
+	</div>
+{% endblock %}

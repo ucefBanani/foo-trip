@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Destination
+{% endblock %}
+
+{% block body %}
+	<h1>Destination</h1>
+	<div class="container mt-4">
+		<div class="row mb-4">
+			<div class="col-md-2"><a class="btn btn-info" href="{{ path('app_destination_index') }}">back to list</a></div>
+            <div class="col-md-2"><a class="btn btn-warning" href="{{ path('app_destination_edit', {'id': destination.id}) }}">edit</a></div>
+            <div class="col-md-2">{{ include('destination/_delete_form.html.twig') }}
+			</div>
+		</div>
+		<div
+			class="row ">
+			<div class="col-md-6">
+                <h1>{{ destination.name }}</h1>
+				<div class="col">
+					<img src="{{ asset('uploads/images/' ~ destination.image) }}" class="img-fluid rounded" alt="{{ destination.name }}" style="max-width: 50%; height: auto;">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="col ">
+					<div class="card-body">
+ 						<p class="card-text">
+							<strong>Description:</strong>
+							{{ destination.description }}</p>
+						<p class="card-text">
+							<strong>Price:</strong>
+							{{ destination.price }}</p>
+						<p class="card-text">
+							<strong>Duration:</strong>
+							{{ destination.duration }}</p>
+						 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

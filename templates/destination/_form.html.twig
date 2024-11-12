@@ -1,0 +1,35 @@
+{{ form_start(form, { 'attr': { 'class': 'form-group' } }) }}
+
+    <div class="mb-3">
+        {{ form_label(form.name, 'Name', { 'label_attr': { 'class': 'form-label' } }) }}
+        {{ form_widget(form.name, { 'attr': { 'class': 'form-control' } }) }}
+        {{ form_errors(form.name) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.description, 'Description', { 'label_attr': { 'class': 'form-label' } }) }}
+        {{ form_widget(form.description, { 'attr': { 'class': 'form-control' } }) }}
+        {{ form_errors(form.description) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.price, 'Price', { 'label_attr': { 'class': 'form-label' } }) }}
+        {{ form_widget(form.price, { 'attr': { 'class': 'form-control' } }) }}
+        {{ form_errors(form.price) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.duration, 'Duration', { 'label_attr': { 'class': 'form-label' } }) }}
+        {{ form_widget(form.duration, { 'attr': { 'class': 'form-control' } }) }}
+        {{ form_errors(form.duration) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.imageFile, 'Image', { 'label_attr': { 'class': 'form-label' } }) }}
+        {{ form_widget(form.imageFile, { 'attr': { 'class': 'form-control' } }) }}
+        {{ form_errors(form.imageFile) }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+
+{{ form_end(form) }}
